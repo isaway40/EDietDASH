@@ -55,7 +55,9 @@ android:background="@color/white">
                     android:id="@+id/rv_buah"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    tools:listitem="@layout/list_diet" />
+                    tools:listitem="@layout/list_diet"
+                    android:clipChildren="false"
+                    android:clipToPadding="false"/>
 
                 <Button
                     android:id="@+id/kirim"
