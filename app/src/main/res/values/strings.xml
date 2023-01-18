@@ -20,4 +20,6 @@
     <string name="g3">Grade 3</string>
     <string name="g1">Grade 1</string>
     <string name="gN">Normal</string>
+    <string name="buah_golongan_a">Buah\nGolongan A</string>
+    <string name="buah_golongan_b">Buah\nGolongan B</string>
 </resources>

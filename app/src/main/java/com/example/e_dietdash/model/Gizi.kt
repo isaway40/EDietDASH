@@ -5,7 +5,6 @@ import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 data class Gizi(
-    var strId: String? = "0",
     var natrium: Int? = 0,
     var kalium: Int? = 0,
     var serat: Int? = 0,

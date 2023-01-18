@@ -24,9 +24,11 @@ class BuahAdapter(query: Query) : FirestoreAdapter<BuahAdapter.BuahViewHolder>(q
         private val satuan: TextView = itemView.findViewById(R.id.satuan)
         private val check: CheckBox = itemView.findViewById(R.id.check)
         private val view: ConstraintLayout = itemView.findViewById(R.id.view)
-        private val input: EditText = itemView.findViewById(R.id.input)
+        val input: EditText = itemView.findViewById(R.id.input)
+        var snapshot: DocumentSnapshot? = null
 
         fun bind(snapshot: DocumentSnapshot) {
+            this.snapshot = snapshot
             view.visibility = View.GONE
             val buah: Buah? = snapshot.toObject(Buah::class.java)
             nama.text = buah?.name.toString()
@@ -39,15 +41,6 @@ class BuahAdapter(query: Query) : FirestoreAdapter<BuahAdapter.BuahViewHolder>(q
                     view.visibility = View.GONE
                     input.text = null
                 }
-            }
-            val test = input.text.toString()
-            if (test != ""){
-                    NutrientData.natrium += buah!!.natrium!! * input.text.toString().toInt()/100
-                    NutrientData.kalium += buah.kalium!! * input.text.toString().toInt()/100
-                    NutrientData.serat += buah.serat!! * input.text.toString().toInt()/100
-                    NutrientData.lemak += buah.lemak!! * input.text.toString().toInt()/100
-                    Eaten.nama = buah.name
-                    Eaten.weight += Eaten.weight + "," + input
             }
         }
     }

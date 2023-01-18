@@ -1,5 +1,6 @@
 package com.example.e_dietdash.ui.diet
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -12,6 +13,7 @@ import androidx.viewpager.widget.ViewPager
 import com.example.e_dietdash.R
 import com.example.e_dietdash.activity.diet.BuahActivity
 import com.example.e_dietdash.activity.MainActivity
+import com.example.e_dietdash.activity.diet.BuahBActivity
 import com.example.e_dietdash.databinding.FragmentDietBinding
 
 class DietFragment : Fragment() {
@@ -19,6 +21,7 @@ class DietFragment : Fragment() {
     private var binding: FragmentDietBinding? = null
     private lateinit var viewPager: ViewPager
 
+    @SuppressLint("MissingInflatedId")
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -35,6 +38,12 @@ class DietFragment : Fragment() {
         val linearLayout = view.findViewById<CardView>(R.id.to_buah)
         linearLayout.setOnClickListener {
             val intent = Intent (activity, BuahActivity::class.java)
+            activity?.startActivity(intent)
+        }
+
+        val linearLayoutb = view.findViewById<CardView>(R.id.to_buahb)
+        linearLayoutb.setOnClickListener {
+            val intent = Intent (activity, BuahBActivity::class.java)
             activity?.startActivity(intent)
         }
 

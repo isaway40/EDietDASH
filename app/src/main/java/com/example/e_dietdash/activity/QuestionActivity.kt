@@ -59,7 +59,7 @@ class QuestionActivity : AppCompatActivity() {
             CustomDialog.showLoading(this)
             btn_lanjut.text = getString(R.string.update)
             db = FirebaseFirestore.getInstance()
-            val docRef = db.document("users/$userId")
+            val docRef = mUsersCollection.document(userId.toString())
             docRef.get().addOnSuccessListener { document ->
                 if (document != null) {
                     val data = document.data
@@ -78,7 +78,7 @@ class QuestionActivity : AppCompatActivity() {
                         "Laki-laki" -> profile_gender.check(R.id.gender_male)
                         "Perempuan" -> profile_gender.check(R.id.gender_female)
                     }
-                    genders = strDiastolik.toString()
+                    genders = jk.toString()
                     CustomDialog.hideLoading()
                 } else {
                     Toast.makeText(this, "Error", Toast.LENGTH_SHORT).show()
