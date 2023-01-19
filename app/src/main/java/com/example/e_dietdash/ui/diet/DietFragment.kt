@@ -15,10 +15,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.viewpager.widget.ViewPager
 import com.example.e_dietdash.R
 import com.example.e_dietdash.`object`.Const
-import com.example.e_dietdash.activity.diet.BuahActivity
 import com.example.e_dietdash.activity.MainActivity
-import com.example.e_dietdash.activity.diet.BuahBActivity
-import com.example.e_dietdash.activity.diet.EditActivity
+import com.example.e_dietdash.activity.diet.*
 import com.example.e_dietdash.databinding.FragmentDietBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -45,13 +43,25 @@ class DietFragment : Fragment() {
         val current = formatter.format(time)
         val db = FirebaseFirestore.getInstance()
         val nestedRef = db.collection(Const.PATH_COLLECTION).document(userId.toString()).collection(Const.GIZI).document(current)
-
         nestedRef.get().addOnSuccessListener { documentSnapshot ->
             if (documentSnapshot.exists()) {
-                val natrium = documentSnapshot.get("natrium").toString()
-                val kalium = documentSnapshot.get("kalium").toString()
-                val serat = documentSnapshot.get("serat").toString()
-                val lemak = documentSnapshot.get("lemak").toString()
+                var natrium = documentSnapshot.get("natrium").toString()
+                var kalium = documentSnapshot.get("kalium").toString()
+                var serat = documentSnapshot.get("serat").toString()
+                var lemak = documentSnapshot.get("lemak").toString()
+
+                if (natrium.isNullOrEmpty() || natrium == "null") {
+                    natrium = "0"
+                }
+                if (kalium.isNullOrEmpty() || kalium == "null") {
+                    kalium = "0"
+                }
+                if (serat.isNullOrEmpty() || serat == "null") {
+                    serat = "0"
+                }
+                if (lemak.isNullOrEmpty() || lemak == "null") {
+                    lemak = "0"
+                }
 
                 val edit = view.findViewById<ImageButton>(R.id.btn_more)
                 edit.setOnClickListener {
@@ -82,7 +92,36 @@ class DietFragment : Fragment() {
                     intent.putExtra("lemak", lemak);
                     activity?.startActivity(intent)
                 }
-                Toast.makeText(requireContext(), natrium.toString(), Toast.LENGTH_SHORT).show()
+
+                val sayurA = view.findViewById<CardView>(R.id.sayurB)
+                sayurA.setOnClickListener {
+                    val intent = Intent (activity, SayurA::class.java)
+                    intent.putExtra("natrium", natrium);
+                    intent.putExtra("kalium", kalium);
+                    intent.putExtra("serat", serat);
+                    intent.putExtra("lemak", lemak);
+                    activity?.startActivity(intent)
+                }
+
+                val sayurB = view.findViewById<CardView>(R.id.sayurA)
+                sayurB.setOnClickListener {
+                    val intent = Intent (activity, SayurB::class.java)
+                    intent.putExtra("natrium", natrium);
+                    intent.putExtra("kalium", kalium);
+                    intent.putExtra("serat", serat);
+                    intent.putExtra("lemak", lemak);
+                    activity?.startActivity(intent)
+                }
+
+                val lemaks = view.findViewById<CardView>(R.id.lemak)
+                lemaks.setOnClickListener {
+                    val intent = Intent (activity, LemakActivity::class.java)
+                    intent.putExtra("natrium", natrium);
+                    intent.putExtra("kalium", kalium);
+                    intent.putExtra("serat", serat);
+                    intent.putExtra("lemak", lemak);
+                    activity?.startActivity(intent)
+                }
             }
         }.addOnFailureListener { exception ->
             Toast.makeText(requireContext(), "Error: ${exception.message}", Toast.LENGTH_SHORT).show()

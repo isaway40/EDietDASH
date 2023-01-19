@@ -22,7 +22,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
 import java.text.SimpleDateFormat
 import java.util.*
-class BuahBActivity : AppCompatActivity() {
+class SayurA : AppCompatActivity() {
     val auth = FirebaseAuth.getInstance()
     val user = auth.currentUser
     val userId = user?.uid
@@ -39,12 +39,12 @@ class BuahBActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_buah_bactivity)
+        setContentView(R.layout.activity_sayur)
 
-        val kirim = findViewById<Button>(R.id.kirim)
+        val kirim = findViewById<Button>(R.id.kirims)
         val query: Query = FirebaseFirestore.getInstance().collection(Const.FOOD)
-            .whereEqualTo("category", Const.BUAH_B)
-        val recyclerView: RecyclerView = findViewById(R.id.rv_buahh)
+            .whereEqualTo("category", Const.SAYUR_A)
+        val recyclerView: RecyclerView = findViewById(R.id.rv_sayur)
 
         val layoutManager = LinearLayoutManager(this)
         recyclerView.layoutManager = layoutManager

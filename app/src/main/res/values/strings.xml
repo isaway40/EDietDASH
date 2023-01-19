@@ -22,4 +22,7 @@
     <string name="gN">Normal</string>
     <string name="buah_golongan_a">Buah\nGolongan A</string>
     <string name="buah_golongan_b">Buah\nGolongan B</string>
+    <string name="sayur">Sayur\nGolongan B</string>
+    <string name="sdfds">Sayur\nGolongan A</string>
+    <string name="daging">Sumber\nLemak</string>
 </resources>

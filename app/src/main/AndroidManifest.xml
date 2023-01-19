@@ -13,6 +13,27 @@
         android:theme="@style/Theme.EDietDASH"
         tools:targetApi="31">
         <activity
+            android:name=".activity.diet.LemakActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".activity.diet.SayurB"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".activity.diet.SayurA"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".activity.diet.EditActivity"
             android:exported="false">
             <meta-data

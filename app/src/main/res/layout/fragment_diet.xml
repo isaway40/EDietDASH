@@ -77,7 +77,10 @@
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
 
+
+
                         <androidx.cardview.widget.CardView
+                            android:id="@+id/sayurB"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginHorizontal="12dp"
@@ -88,6 +91,49 @@
                             app:cardElevation="12dp">
 
                             <LinearLayout
+
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:padding="12dp"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:src="@drawable/img_carrot"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginHorizontal="8dp"/>
+
+                                <TextView
+                                    android:text="@string/sdfds"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="12dp"
+                                    android:fontFamily="@font/poppins_semibold"
+                                    android:textSize="16sp"
+                                    android:textAlignment="center"
+                                    android:layout_gravity="center"
+                                    android:textColor="@color/white"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/sayurA"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="12dp"
+                            android:layout_marginBottom="24dp"
+                            android:backgroundTint="@color/orange_300"
+                            app:cardCornerRadius="15dp"
+                            android:clipToPadding="false"
+                            app:cardElevation="12dp">
+
+                            <LinearLayout
+
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:padding="12dp"
@@ -102,7 +148,7 @@
 
                                 <TextView
                                     android:id="@+id/name_sayur"
-                                    android:text="Sayur"
+                                    android:text="@string/sayur"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="12dp"
@@ -205,6 +251,7 @@
                         </androidx.cardview.widget.CardView>
 
                         <androidx.cardview.widget.CardView
+                            android:id="@+id/lemak"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginHorizontal="12dp"
@@ -229,7 +276,7 @@
 
                                 <TextView
                                     android:id="@+id/name_meat"
-                                    android:text="Daging"
+                                    android:text="@string/daging"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="12dp"

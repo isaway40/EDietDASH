@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".activity.diet.BuahBActivity"
+    tools:context=".activity.diet.SayurA"
     android:background="@color/white">
 
     <androidx.core.widget.NestedScrollView
@@ -38,7 +38,7 @@
 
                     <TextView
                         android:id="@+id/name_category"
-                        android:text="Buah Golongan B"
+                        android:text="Sayur Golongan A"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="48dp"
@@ -52,7 +52,7 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/rv_buahh"
+                        android:id="@+id/rv_sayur"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         tools:listitem="@layout/list_diet"
@@ -60,7 +60,7 @@
                         android:clipToPadding="false"/>
 
                     <Button
-                        android:id="@+id/kirim"
+                        android:id="@+id/kirims"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"

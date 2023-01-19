@@ -11,7 +11,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.e_dietdash.R
 import com.example.e_dietdash.`object`.Const
-import com.example.e_dietdash.`object`.Const.DATA
 import com.example.e_dietdash.`object`.Const.PATH_COLLECTION
 import com.example.e_dietdash.`object`.CustomDialog
 import com.example.e_dietdash.adapter.GiziAdapter
@@ -68,19 +67,19 @@ class HomeFragment : Fragment() {
                 val strDiastolik = data?.get("strDiastolik")
                 val strSistolik = data?.get("strSistolik")
                 val nama = data?.get("strName")
-                val grad = data?.get("grades").toString()
+                val grad = data?.get("grades")
 
                 when (grad) {
-                    "3" -> {
+                    3 -> {
                         Grade.text = "Grade 1"
                     }
-                    "2" -> {
+                    2 -> {
                         Grade.text = "Grade 2"
                     }
-                    "1" -> {
+                    1 -> {
                         Grade.text = "Grade 1"
                     }
-                    "0" -> {
+                    0 -> {
                         Grade.text = "Normal"
                     }
                 }
