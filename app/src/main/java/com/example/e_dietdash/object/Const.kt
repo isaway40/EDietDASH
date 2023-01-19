@@ -6,5 +6,6 @@ object Const {
     val GIZI = "gizi"
     val DATA = "data"
     val FOOD = "foodCategory"
-    val BUAH = "buah"
+    val BUAH_A = "buah_gol_A"
+    val BUAH_B = "buah_gol_B"
 }
